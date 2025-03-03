@@ -7,4 +7,16 @@
 
 using namespace std;
 
+char board[8][8];
 
+//Print board
+
+//Move piece from one place to another
+
+
+int main() {
+
+
+
+    return 1;
+}
