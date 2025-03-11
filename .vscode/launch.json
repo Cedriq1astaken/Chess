@@ -8,8 +8,13 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
+<<<<<<< Updated upstream
       "cwd": "c:/Users/bend2/OneDrive/Documents/GitHub/Chess/Chess/src",
       "program": "c:/Users/bend2/OneDrive/Documents/GitHub/Chess/Chess/src/build/Debug/outDebug",
+=======
+      "cwd": "c:/Users/bend2/OneDrive/Documents/GitHub/Chess/src",
+      "program": "c:/Users/bend2/OneDrive/Documents/GitHub/Chess/src/build/Debug/outDebug",
+>>>>>>> Stashed changes
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
