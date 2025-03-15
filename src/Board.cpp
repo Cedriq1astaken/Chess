@@ -4,7 +4,6 @@
 
 #include "iostream"
 #include "Piece.cpp"
-#include <vector>
 
 using namespace std;
 
@@ -24,7 +23,7 @@ void printBoard(const std::vector<std::vector<char>>& board) {
 //Move piece from one place to another
 //Safwaan Arif (the chessboard array is not mine)
 
-void movePiece(std::vector<std::vector<char>>& board, int fromRow, int fromCol, int toRow, int toCol)
+void movePiece(char Board[8][8], int fromRow, int fromCol, int toRow, int toCol)
 {
     board[toRow][toCol] = board[fromRow][fromCol];
     board[fromRow][fromCol] = '.';
@@ -44,7 +43,7 @@ int main() {
 
     printBoard(chessBoard);
 
-    movePiece(chessBoard, 6, 0, 4, 0);
+    movePiece(chessBoard, 7, 0, 6, 2);
     std::cout << "\nAfter moving the piece:\n";
     printBoard(chessBoard);
 
