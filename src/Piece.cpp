@@ -55,6 +55,7 @@ class Piece {
 };
 
 
+
 // Main function
 int main() {
     return 0;
