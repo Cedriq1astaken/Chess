@@ -37,5 +37,3 @@ void Piece::display() const {     // Function to display piece information
     }
 }
 
-
-

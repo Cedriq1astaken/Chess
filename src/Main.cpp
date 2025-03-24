@@ -9,6 +9,9 @@
 using namespace std;
 
 
+
+
+
 int main(){
     char board[8][8] = {
         {'0', '0', '0', '0', '0', '0', '0', '0'},
@@ -29,7 +32,6 @@ int main(){
     p2.checkAvailable(board, 1, 7);
     p2.display();
     p.display();
-
 
     return 0;
 };
