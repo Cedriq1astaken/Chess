@@ -3,15 +3,17 @@
 //
 
 #include "iostream"
+#include "Piece.h"
+#include "Pawn.h"
+
 using namespace std;
 
 
-
-
-
 int main(){
+    Pawn p('w');
 
-    return 1;
+    p.display();
+    return 0;
 };
 
 
