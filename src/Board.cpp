@@ -10,8 +10,7 @@ using namespace std;
 char board[8][8];
 
 //Print board
-//Sergio Orama
-//Modified to use regular array instead of vectors (05/24)
+//Sergio Orama 05/24 Modified to use regular array instead of vectors.
 void printBoard(char board[8][8]) { 
     for (int row = 0; row < 8; row++) {
         for (int col = 0; col < 8; col++) {
@@ -30,8 +29,8 @@ void movePiece(char Board[8][8], int fromRow, int fromCol, int toRow, int toCol)
     board[fromRow][fromCol] = '.';
 }
 
-
-int main() { // Sergio Orama 05/24 I made the chessboard array again to use regular arrays instead of vectors.
+// Sergio Orama 05/24 I made the chessboard array again to use regular arrays instead of vectors.
+int main() { 
     const int boardSize = 8;
     char chessBoard[boardSize][boardSize] = {
         {'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'},
