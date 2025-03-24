@@ -11,10 +11,11 @@ char board[8][8];
 
 //Print board
 //Sergio Orama
-void printBoard(const std::vector<std::vector<char>>& board) {
-    for (const auto& row : board) {
-        for (char square : row) {
-            std::cout << square << " ";
+//Modified to use regular array instead of vectors (05/24)
+void printBoard(char board[8][8]) { 
+    for (int row = 0; row < 8; row++) {
+        for (int col = 0; col < 8; col++) {
+            std::cout << board[row][col] << " ";
         }
         std::cout << std::endl;
     }
@@ -29,8 +30,10 @@ void movePiece(char Board[8][8], int fromRow, int fromCol, int toRow, int toCol)
     board[fromRow][fromCol] = '.';
 }
 
-int main() {
-    std::vector<std::vector<char>> chessBoard = {
+
+int main() { // Sergio Orama 05/24 I made the chessboard array again to use regular arrays instead of vectors.
+    const int boardSize = 8;
+    char chessBoard[boardSize][boardSize] = {
         {'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'},
         {'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'},
         {'.', '.', '.', '.', '.', '.', '.', '.'},
