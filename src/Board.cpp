@@ -9,7 +9,7 @@ using namespace std;
 
 char board[8][8];
 
-//Print board
+
 //Sergio Orama 05/24 Modified to use regular array instead of vectors.
 void printBoard(char board[8][8]) { 
     for (int row = 0; row < 8; row++) {
@@ -28,6 +28,9 @@ void movePiece(char Board[8][8], int fromRow, int fromCol, int toRow, int toCol)
     board[toRow][toCol] = board[fromRow][fromCol];
     board[fromRow][fromCol] = '.';
 }
+
+
+int main() {
 
 // Sergio Orama 05/24 I made the chessboard array again to use regular arrays instead of vectors.
 int main() { 

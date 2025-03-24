@@ -4,59 +4,36 @@
 
 //Code below written by Alessandro Perea on 3/11/2025
 #include <iostream>
-#include <array>
-#include <optional>
+#include "Piece.h"
 
-// Define the PieceColor enum
-enum class PieceColor {
-    White,
-    Black,
-    None
-};
+using namespace std;
 
-// Define the Piece class
-class Piece {
+// Private data members
+char color; // Color of the piece
+int moveSet[8][8];
 
 
-
-    // Getter for the piece color
-    PieceColor getPColor() const {
-        return pcolor_identifier;
+Piece::Piece(){
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+            moveSet[i][j] = 0;
+        }
     }
+}
 
-    // Getter for the piece's row (rank)
-    int getRow() const {
-        return row;
+char Piece::getColor() const {    // Getter for the piece color
+    return color;
+}
+
+void Piece::display() const {     // Function to display piece information
+    string colorStr = (color == 'w') ? "White" : "Black";
+    cout << "Piece: " << " (" << colorStr << ")" << endl;
+
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+            cout << moveSet[i][j] << " | ";
+        }
+        cout << endl;
     }
-
-    // Getter for the piece's column (file)
-    int getCol() const {
-        return col;
-    }
-
-    // Setter for the piece's position
-    void setPosition(int newRow, int newCol) {
-        row = newRow;
-        col = newCol;
-    }
-
-    // Function to display piece information
-    void display() const {
-        std::string colorStr = (pcolor_identifier == PieceColor::White) ? "White" : "Black";
-        std::cout << "Piece: " << " (" << colorStr << ") at (" << row << ", " << col << ")" << std::endl;
-    }
-
-    private:
-        // Private data members
-        PieceColor pcolor_identifier; // Color of the piece
-        int row; // Row (rank) of the piece's position
-        int col; // Column (file) of the piece's position
-};
-
-
-
-// Main function
-int main() {
-    return 0;
 }
 
