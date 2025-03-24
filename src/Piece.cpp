@@ -2,7 +2,6 @@
 // Created by cedri on 2/25/2025.
 //
 
-
 //Code below written by Alessandro Perea on 3/11/2025
 #include <iostream>
 #include <array>
@@ -61,4 +60,3 @@ int main() {
     return 0;
 }
 
-//Added new position variables and their respective retrun functions
