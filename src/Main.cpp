@@ -5,6 +5,7 @@
 #include "iostream"
 #include "Piece.h"
 #include "Pawn.h"
+#include "Board.h"
 
 using namespace std;
 
@@ -13,25 +14,11 @@ using namespace std;
 
 
 int main(){
-    char board[8][8] = {
-        {'0', '0', '0', '0', '0', '0', '0', '0'},
-        {'0', '0', '0', '0', '0', '0', '0', '0'},
-        {'0', '0', '0', '0', '0', '0', '0', '0'},
-        {'0', '0', '0', '0', '0', '0', '0', '0'},
-        {'0', '0', '0', '0', '0', '0', '0', '0'},
-        {'0', '0', '0', '0', '0', '0', '0', '0'},
-        {'0', '0', '0', '0', '0', '0', '0', '0'},
-        {'0', '0', '0', '0', '0', '0', '0', '0'}
-    };
-    Pawn p('w');
+    Board b;
 
-    p.checkAvailable(board, 6, 7);
-
-    Pawn p2('b');
-
-    p2.checkAvailable(board, 1, 7);
-    p2.display();
-    p.display();
+    b.printBoard();
+    b.movePiece(1, 1, 3, 1);
+    b.printBoard();
 
     return 0;
 };

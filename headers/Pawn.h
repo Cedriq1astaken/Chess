@@ -14,6 +14,8 @@ public:
     void checkAvailable(char board[8][8], int row, int col);
 
     int **getMoveSet();
+
+
 };
 
 #endif //PAWN_H

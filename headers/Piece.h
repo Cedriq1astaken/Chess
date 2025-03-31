@@ -17,6 +17,7 @@ public:
     char getColor() const;
     void display() const;
 
+    Piece &operator=(char c);
 };
 
 
