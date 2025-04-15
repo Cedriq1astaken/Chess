@@ -478,8 +478,8 @@ public:
                 board[fromRow + 1][fromCol] == nullptr) //this checks if the square in front of the pawn is empty
                     movesBoard[fromRow + 1][fromCol] = '1'; // this marks the square in front of the pawn square with a "1"
 
-            // 2 steps from white starting row (1)
-            if (fromRow == 1 && //checks if the white pawn is the row 1, meaning it wasnt moved yet and can advance 2 spaces
+            // 2 steps from black starting row (1)
+            if (fromRow == 1 && //checks if the black pawn is the row 1, meaning it wasnt moved yet and can advance 2 spaces
                 board[fromRow + 1][fromCol] == nullptr && //checks if the space in front of the pawn is empty
                 board[fromRow + 2][fromCol] == nullptr) //checks if the second space in front of the pawn is empty
                     movesBoard[fromRow + 2][fromCol] = '1'; //marks second square with a "1"
