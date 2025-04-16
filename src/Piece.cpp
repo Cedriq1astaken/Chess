@@ -9,7 +9,8 @@
 using namespace std;
 
 // Private data members
-char color; // Color of the piece
+char color; // 'B' for black, 'W' for white
+char symbol; // 'r', 'n', 'b', 'q', 'k', 'p' for black pieces  'R', 'N', 'B', 'Q', 'K', 'P' for white pieces
 int moveSet[8][8];
 
 
@@ -21,19 +22,11 @@ Piece::Piece(){
     }
 }
 
-char Piece::getColor() const {    // Getter for the piece color
+char Piece::getColor() {    // Getter for the piece color
     return color;
 }
-
-void Piece::display() const {     // Function to display piece information
-    string colorStr = (color == 'w') ? "White" : "Black";
-    cout << "Piece: " << " (" << colorStr << ")" << endl;
-
-    for (int i = 0; i < 8; i++) {
-        for (int j = 0; j < 8; j++) {
-            cout << moveSet[i][j] << " | ";
-        }
-        cout << endl;
-    }
+char Piece::getSymbol() {    // Getter for the piece symbol
+    return symbol;
 }
+
 

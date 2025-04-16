@@ -9,13 +9,7 @@
 class Pawn: public Piece{
 public:
     bool moved; //Has the pawn moved once?
-    Pawn(char theColor);
-
-    void checkAvailable(char board[8][8], int row, int col);
-
-    int **getMoveSet();
-
-
+    void displayMoves(Piece* board[8][8], int fromRow, int fromCol);
 };
 
 #endif //PAWN_H

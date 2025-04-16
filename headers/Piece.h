@@ -11,13 +11,14 @@ using namespace std;
 class Piece {
 
 public:
-    char color;
+    char color; // 'B' for black, 'W' for white
+    char symbol; // 'r', 'n', 'b', 'q', 'k', 'p' for black pieces  'R', 'N', 'B', 'Q', 'K', 'P' for white pieces
     int moveSet[8][8];
-    Piece();
-    char getColor() const;
-    void display() const;
 
-    Piece &operator=(char c);
+    Piece(); // virtual destructor for proper cleanup, so it not only cleans up the base class but also derived classes
+    char getColor();
+    char getSymbol();
+    virtual void displayMoves(Piece* board[8][8], int fromRow, int fromCol) = 0;// function to display possible moves
 };
 
 

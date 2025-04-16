@@ -3,24 +3,21 @@
 //
 
 #include "iostream"
-#include "Piece.h"
-#include "Pawn.h"
 #include "Board.h"
 
 using namespace std;
 
-
-
-
-
 int main(){
-    Board b;
+    Board *board = new Board();
 
-    b.printBoard();
-    b.movePiece(1, 1, 3, 1);
-    b.printBoard();
 
-    return 0;
+    board->displayMoves(0, 4);
+    board->movePiece(0,4, 4, 4);
+    board->displayMoves(4, 4);
+
+
+
+    return 1;
 };
 
 
