@@ -576,6 +576,50 @@ class Board {
             else
                 std::cout << "There is not piece here\n";
         }
+        // Task 1: This checks if the king is in check by checking if any enemy piece can attack the king 
+bool isKingInCheck(char kingColor) {
+    // Check if the king is in check
+    int kingRow, kingCol;
+    for (int row = 0; row < 8; ++row) {
+        for (int col = 0; col < 8; ++col) {
+            if (board[row][col] != nullptr && board[row][col]->symbol == 'K' && board[row][col]->color == kingColor) {
+                kingRow = row;
+                kingCol = col;
+                break;
+            }
+        }
+        if (kingRow != -1) break;
+    }
+    if (kingRow == -1) {
+        std::cout << "King not found\n";
+        return false;
+    }
+    // Now check if any enemy piece can attack the king
+    for (int row = 0; row < 8; ++row) {
+        for (int col = 0; col < 8; ++col) {
+            if (board[row][col] != nullptr && board[row][col]->color != kingColor) {
+                // Temporary moves board
+                char movesBoard[8][8];
+                for (int x = 0; x < 8; ++x) {
+                    for (int y = 0; y < 8; ++y) {
+                        movesBoard[x][y] = '.';
+                    }
+                }
+                // Test the moves of the enemy piece
+                board[row][col]->displayMoves(board, row, col);
+
+                // Check if the king's position is marked as a valid move
+                if (movesBoard[kingRow][kingCol] == 'X') {
+                    std::cout << "King is in check!\n";
+                    return true; // King is in check
+                }
+            }
+        }
+    }
+
+    return false; // King is not in check
+
+}
     };
 
 int main() {
