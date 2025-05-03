@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Piece {
@@ -598,6 +599,43 @@ public:
         }
         return false; // If no enemy piece can attack the king, king is not in check
     };
+    string getFEN()
+    {
+        string fen = "";
+        for (int row = 0; row < 8; ++row)
+        {
+            int emptyCount = 0;
+
+            for (int col = 0; col < 8; ++col)
+            {
+                if (board[row][col] == nullptr)
+                {
+                    ++emptyCount;
+                }
+                else
+                {
+                    if (emptyCount > 0)
+                    {
+                        fen += to_string(emptyCount);
+                        emptyCount = 0;
+                    }
+                    fen += board[row][col]->symbol;
+                }
+            }
+            if (emptyCount > 0)
+            {
+                fen += to_string(emptyCount);
+            }
+            if (row < 7)
+            {
+                fen += "/";
+            }
+        }
+
+        fen += " w - - 0 1 ";
+        return fen;
+    }
+};
 
     int main() {
         Board board;
@@ -651,4 +689,5 @@ public:
         board.displayMoves(1, 3);
         cout << "\n";
     }
+    
 
