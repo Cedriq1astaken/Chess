@@ -7,8 +7,9 @@ public:
     char color; // 'B' for black, 'W' for white
     char symbol; // 'r', 'n', 'b', 'q', 'k', 'p' for black pieces  'R', 'N', 'B', 'Q', 'K', 'P' for white pieces
 	char movesBoard[8][8]; // this is the board that will be used to display the valid moves of each piece
+	bool hasMoved; // this is used to check if the piece has moved, so it can be used to check if the pawn can move 2 spaces or not
 
-    Piece() {
+    Piece() : hasMoved(false) {
 		for (int x = 0; x < 8; ++x) {
 			for (int y = 0; y < 8; ++y) {
 				movesBoard[x][y] = '.'; // this sets the board to empty
@@ -549,6 +550,10 @@ public:
     void movePiece(int fromRow, int fromCol, int toRow, int toCol) {
         Piece* piece = board[fromRow][fromCol];
 
+		if (piece != nullptr) {
+			piece->hasMoved = true; // mark the piece as moved
+		}
+
         // capturing, if destination has a piece.
         if (board[toRow][toCol] != nullptr) {
             delete board[toRow][toCol];
@@ -635,6 +640,74 @@ public:
         fen += " w - - 0 1 ";
         return fen;
     }
+    bool canCastle(char kingColor, bool isKingSide)
+    {
+		int row = (kingColor == 'W') ? 7 : 0;
+		int kingCol = 4;
+        int rookCol = (isKingSide) ? 7 : 0;
+
+		if (board[row][kingCol] == nullptr || board[row][rookCol] == nullptr)
+			return false; // No king or rook to castle with
+        if (board[row][kingCol]->hasMoved || board[row][rookCol]->hasMoved)
+            return false;
+		if (board[row][kingCol]->symbol != 'K' || board[row][rookCol]->symbol != 'R')
+			return false; 
+
+		int startCol = min(kingCol, rookCol) + 1;
+		int endCol = max(kingCol, rookCol) - 1;
+        for (int col = startCol; col <= endCol; ++col)
+        {
+			if (board[row][col] != nullptr)
+				return false; // There is a piece in the way
+        }
+
+		for (int col = min(kingCol, rookCol); col <= max(kingCol, rookCol); ++col)
+		{
+			if (isKingUnderAttack(row, col, kingColor))
+				return false; // King is in check after castling
+		}
+		return true; // Castling can be done
+    }
+    bool isKingUnderAttack(int row, int col, char kingColor)
+    {
+		for (int r = 0; r < 8; ++r)
+		{
+			for (int c = 0; c < 8; ++c)
+			{
+				if (board[r][c] != nullptr && board[r][c]->color != kingColor)
+				{
+					// Check if the piece can attack the king's position
+					board[r][c]->displayMoves(board, r, c);
+					if (board[r][c]->movesBoard[row][col] == 'X')
+						return true; // King is under attack
+				}
+			}
+		}
+		return false; // King is not under attack
+    }
+    void castle(char kingColor, bool isKingSide)
+    {
+        if (!canCastle(kingColor, isKingSide))
+        {
+            cout << "Castling not possible" << endl;
+            return;
+        }
+        int row = (kingColor == 'W') ? 7 : 0;
+        int kingCol = 4;
+        int rookCol = (isKingSide) ? 7 : 0;
+        int newKingCol = (isKingSide) ? 6 : 2;
+        int newRookCol = (isKingSide) ? 5 : 3;
+
+        // Move the king
+        movePiece(row, kingCol, row, newKingCol);
+
+        // Move the rook
+        movePiece(row, rookCol, row, newRookCol);
+
+        cout << "Castling successful" << endl;
+    }
+
+
 };
 
     int main() {
@@ -689,5 +762,6 @@ public:
         board.displayMoves(1, 3);
         cout << "\n";
     }
+    
     
 
