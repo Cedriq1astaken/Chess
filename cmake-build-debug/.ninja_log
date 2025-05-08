@@ -1,0 +1,16 @@
+# ninja log v6
+74	1132	7684312116999269	CMakeFiles/imguitest.dir/gui.cpp.obj	1753e162d0c44266
+145	1813	7683522909225452	CMakeFiles/imguitest.dir/src/pieces/Queen.cpp.obj	bd0a368246a99421
+127	1801	7683522909038055	CMakeFiles/imguitest.dir/src/pieces/Knight.cpp.obj	75ced97eda5acfd0
+63	1061	7684312116887305	CMakeFiles/imguitest.dir/main.cpp.obj	6778119623b15c2b
+1132	1780	7684312127571885	imguitest.exe	9e8a275419a3e69e
+10	3578	7680104973184711	build.ninja	e3c2cd72078ffd8c
+62	8579	7672260541448589	CMakeFiles/imguitest.dir/bindings/imgui_impl_opengl3.cpp.obj	4bc61f155b42e3e4
+47	10816	7672260541298564	CMakeFiles/imguitest.dir/bindings/imgui_impl_glfw.cpp.obj	e2ab733957bfc994
+60	1350	7683546796209083	CMakeFiles/imguitest.dir/src/pieces/King.cpp.obj	f5a6200de8490911
+136	1809	7683522909133374	CMakeFiles/imguitest.dir/src/pieces/Pawn.cpp.obj	bedc015192a13f65
+109	1808	7683522908854374	CMakeFiles/imguitest.dir/src/pieces/Bishop.cpp.obj	814055bd2a56a88a
+165	1797	7683522909423225	CMakeFiles/imguitest.dir/src/pieces/Rook.cpp.obj	c25161c444cbac49
+60	1246	7684303754253478	CMakeFiles/imguitest.dir/src/Board.cpp.obj	e81f434f9cdf0ca1
+1381	4415	7672260554632508	CMakeFiles/imguitest.dir/src/Main.cpp.obj	17fadd384a718003
+196	1831	7683522909731392	CMakeFiles/imguitest.dir/src/Piece.cpp.obj	e87cf3493e256ba9

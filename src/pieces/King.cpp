@@ -9,6 +9,11 @@
 void King::displayMoves(Piece* board[8][8], int fromRow, int fromCol) {
     //this creates a char board to store and display the valid moves
     char movesBoard[8][8];
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+            Piece::moveSet[i][j] = 0;
+        }
+    }
     for (int row = 0; row < 8; ++row) {
         for (int col = 0; col < 8; ++col) {
             if (board[row][col])
@@ -45,13 +50,7 @@ void King::displayMoves(Piece* board[8][8], int fromRow, int fromCol) {
             }
         }
     }
-    //this prints the char movesBoard with the valid moves
-    std::cout << '\n';
-    for (int i = 0; i < 8; i++) {
-        for (int j = 0; j < 8; j++) {
-            cout << movesBoard[i][j] << "  ";
-        }
-        cout << std::endl;
-    }
+
 }
+
 

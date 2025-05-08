@@ -8,6 +8,11 @@
 void Rook::displayMoves(Piece* board[8][8], int fromRow, int fromCol){
     //this creates a char board to store and display the valid moves
     char movesBoard[8][8];
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+            Piece::moveSet[i][j] = 0;
+        }
+    }
     for (int row = 0; row < 8; ++row) {
         for (int col = 0; col < 8; ++col) {
             if (board[row][col])
@@ -87,14 +92,5 @@ void Rook::displayMoves(Piece* board[8][8], int fromRow, int fromCol){
     // this board looks different from the others. To make it consistent with the regular board layout,
     // replace this code with the one used in another piece.
     // If you want all the pieces to use this layout, copy this code and replace it in the other piece classes.
-    for (int i = 0; i < 8; i++) {
-        cout << "  +---+---+---+---+---+---+---+---+" << endl;
-        cout << i + 1 << " | ";
-        for (int j = 0; j < 8; j++) {
-            cout << movesBoard[i][j] << " | ";
-        }
-        cout << std::endl;
-    }
-    cout << "  +---+---+---+---+---+---+---+---+" << endl;
-    cout << "    a   b   c   d   e   f   g   h" << endl;
+
 };
