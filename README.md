@@ -66,5 +66,6 @@ https://github.com/user-attachments/assets/972832f1-1423-4640-95e2-81fe799e0af8
  # Alessandro 
  # Cedric 
  # Sergio
+For our C++ chess game project, I was responsible for implementing the full movement logic for all six chess pieces—Rook, Knight, Bishop, Queen, King, and Pawn—adhering to object-oriented design principles. While the base Piececlass was authored by another teammate, I developed all derived subclasses, overriding the displayMoves() method in each to define legal movement patterns per chess rules. I also designed and implemented the Board class, which manages the 8x8 grid, initializes the standard starting layout for both colors, and handles piece placement, movement, and capture logic. The board uses a Piece* board[8][8] structure, and my logic marks valid move squares with '1' and possible captures with 'X', enabling visualization of threats and legal options. In total,  In total, I contributed over 500 lines of code in my initial branch that were later used and adapted by other teammates. My work forms the core backend logic of the game engine, which other team members will extend with UI integration, special move support (e.g., castling, en passant), and full game control flow.
  # Szymon
  # Safwaan
