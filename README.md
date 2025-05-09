@@ -62,7 +62,7 @@ https://github.com/user-attachments/assets/972832f1-1423-4640-95e2-81fe799e0af8
      * Threefold repetition: same position appears 3 times.
 
 
-# Group contributions to the project. (Put your contributions to the project in here. afterwards delete this comente)
+# Group contributions to the project.
  # Alessandro
  For this project, I worked on the checkmate detection, I also assited Cedric with the knight piece logic and the pawn piece logic. I also assisted Cedric with the Bishop, Knight and Pawn header files. Unfortunately, my files for this project had gotten corrupted on my VSCode so I was not able to commit my changes to the main branch but rest assured Professor Agar, I had been putting many hours of work into this project, both at my job and on campus. Thank you for everything.
  # Cedric 
@@ -70,6 +70,7 @@ https://github.com/user-attachments/assets/972832f1-1423-4640-95e2-81fe799e0af8
  # Sergio
 For our C++ chess game project, I was responsible for implementing the full movement logic for all six chess pieces—Rook, Knight, Bishop, Queen, King, and Pawn—adhering to object-oriented design principles. While the base PieceClass was authored by another teammate, I developed all derived subclasses, overriding the displayMoves() method in each to define legal movement patterns per chess rules. I also designed and implemented the Board class, which manages the 8x8 grid, initializes the standard starting layout for both colors, and handles piece placement, movement, and capture logic. The board uses a Piece* board[8][8] structure, and my logic marks valid move squares with '1' and possible captures with 'X', enabling visualization of threats and legal options. In total, I contributed over 500 lines of code in my initial branch that were later used and adapted by other teammates. My work forms the core backend logic of the game engine, which other team members will extend with UI integration, special move support (e.g., castling, en passant), and full game control flow.
  # Szymon
+ * worked on the ReadMe.md file (Cedric help me implament the video's and image's of the game).
  # Safwaan
     Worked on the following:
    - Created a function that can move a piece from one position to another in an array
