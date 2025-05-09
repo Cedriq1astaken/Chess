@@ -78,7 +78,7 @@ For our C++ chess game project, I was responsible for implementing the full move
 
 
 # Libraries used
-Dear ImGui
-Glfw3
+Dear ImGui <br>
+Glfw3 <br>
 Glad
 
