@@ -75,3 +75,10 @@ For our C++ chess game project, I was responsible for implementing the full move
    - Created a function that checks if the "King is in check"
    - Created a function that returns the FEN of the chessboard
    - Created a "Castling" function
+
+
+# Libraries used
+Dear ImGui
+Glfw3
+Glad
+
