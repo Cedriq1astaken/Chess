@@ -63,7 +63,8 @@ https://github.com/user-attachments/assets/972832f1-1423-4640-95e2-81fe799e0af8
 
 
 # Group contributions to the project. (Put your contributions to the project in here. afterwards delete this comente)
- # Alessandro 
+ # Alessandro
+ For this project, I worked on the checkmate detection, I also assited Cedric with the knight piece logic and the pawn piece logic. I also assisted Cedric with the Bishop, Knight and Pawn header files. Unfortunately, my files for this project had gotten corrupted on my VSCode so I was not able to commit my changes to the main branch but rest assured Professor Agar, I had been putting many hours of work into this project, both at my job and on campus. Thank you for everything.
  # Cedric 
  For our C++ game project, I was responsible for writting some of the initial game logic, dividing the code into different classes and making sure everybody's code work together with minimal. I was also responsible for implementing the Gui using dear IMGUI library and making sure the game logic works well with the GUI.
  # Sergio
